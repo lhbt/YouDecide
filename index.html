@@ -17,11 +17,11 @@
 
         <div>
             <p>Your options now are...</p>
-            <ul class="list-group">
+            <ul class="list-group" rv-if="viewModel:HasOptions">
                 <li class="list-group-item" rv-each-option="viewModel:Options">
                     {option.optionNumber}: {option.option}
                 </li>
-            <ul>
+            </ul>
         </div>
     </div>
 </body>

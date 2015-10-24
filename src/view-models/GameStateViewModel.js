@@ -4,20 +4,19 @@ define('gameStateViewModel', ['dataAccessor'], function (dataAccessor) {
         dataAccessor.getGameState(
             function(data) {
                 state.Options = data.gameOptions;
-            }, 
-            function (error) {
-                state.ErrorMessage = error;
+                state.HasOptions = true;
             }
         )
     };
 
     var state = {
-        ErrorMessage: "",
         Options: [],
+        HasOptions: false,
         GameState: ""
     };
     
     getGameState();
+    
     return state;
 
 });
