@@ -16,7 +16,7 @@ define('gameStateViewModel', ['dataAccessor'], function (dataAccessor) {
         History: ""
     };
     
-    getGameState();
+    var timer = setInterval(getGameState, 1000);
 
     return state;
 
