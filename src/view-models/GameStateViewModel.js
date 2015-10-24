@@ -6,7 +6,6 @@ define('gameStateViewModel', ['dataAccessor'], function (dataAccessor) {
                 state.Options = data.GameOptions;
                 state.History = data.History;
                 state.HasOptions = true;
-                console.dir(state);
             }
         )
     };
