@@ -9,4 +9,4 @@ deployment:
   staging:
     branch: master
     heroku:
-      appname: you-decide
+      appname: salty-tor-7961
