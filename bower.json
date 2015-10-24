@@ -1,0 +1,30 @@
+{
+  "name": "you-decide",
+  "main": "index.js",
+  "version": "0.0.0",
+  "authors": [
+    "Laurent Humbert <laurent.humbert@laterooms.com>",
+    "Danny Parkinson <danny.parkinson@laterooms.com>",
+    "Clare Sudbery <clare.sudbery@laterooms.com>"
+  ],
+  "moduleType": [
+    "node"
+  ],
+  "license": "LicenseRef-LICENSE",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.3.5",
+    "jquery": "~2.1.4",
+    "requirejs": "~2.1.20",
+    "rivets": "~0.8.1",
+    "sightglass": "~0.2.4",
+    "Watch.JS": "watch#*",
+    "requirejs-plugins": "~1.0.3"
+  }
+}
