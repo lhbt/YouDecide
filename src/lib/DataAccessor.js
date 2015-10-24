@@ -1,7 +1,7 @@
 define('dataAccessor', ['jquery'], function($) {
     return {
         getGameState: function(criteria, onSuccess, onFailure) {
-            var url = 'http://youdecideapi.apphb.com/start';
+            var url = 'http://youdecideapi.apphb.com/gamestate';
             sendAjaxRequest(url, 'get', onSuccess, onFailure);
         }
     }
