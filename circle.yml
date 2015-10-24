@@ -5,3 +5,8 @@ machine:
     version: 0.10.32
 test:
   override:
+deployment:
+  staging:
+    branch: master
+    heroku:
+      appname: you-decide
