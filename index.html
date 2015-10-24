@@ -9,7 +9,7 @@
 <body>
     <div class="container" id="leContainer">
 
-        <img src="logo.png" width="717.5" height="250">
+        <img src="logo.png" width="717.5" height="250" />
 
         <h3 rv-text="viewModel.History"></h3>
         <br/>
@@ -18,7 +18,7 @@
             <p>Your options now are...</p>
             <ul class="list-group" rv-if="viewModel:HasOptions">
                 <li class="list-group-item" rv-each-option="viewModel:Options">
-                    {option.optionNumber}: {option.option}
+                    {option.OptionNumber}: {option.Option}
                 </li>
             </ul>
         </div>
@@ -33,5 +33,5 @@
         <br/>
         <h1>NB: You may not be the only player. Multiplayer is not available _yet_, bear with us while we implement it!</h1>
     </div>
-</body>
+</body> 
 </html>

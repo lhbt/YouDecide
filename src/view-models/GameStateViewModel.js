@@ -3,9 +3,10 @@ define('gameStateViewModel', ['dataAccessor'], function (dataAccessor) {
     var getGameState = function() {
         dataAccessor.getGameState(
             function(data) {
-                state.Options = data.gameOptions;
-                state.History = data.history;
+                state.Options = data.GameOptions;
+                state.History = data.History;
                 state.HasOptions = true;
+                console.dir(state);
             }
         )
     };
