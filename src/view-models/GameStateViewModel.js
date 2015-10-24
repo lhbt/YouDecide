@@ -1,9 +1,9 @@
 define('gameStateViewModel', ['dataAccessor'], function (dataAccessor) {
     
     var getGameState = function() {
-        dataAccessor.getGameState('hello',
+        dataAccessor.getGameState(
             function(data) {
-                state.GameState = data;
+                state.Options = data.gameOptions;
             }, 
             function (error) {
                 state.ErrorMessage = error;
@@ -12,10 +12,12 @@ define('gameStateViewModel', ['dataAccessor'], function (dataAccessor) {
     };
 
     var state = {
-        GameState: getGameState,
-        ErrorMessage: ""
+        ErrorMessage: "",
+        Options: [],
+        GameState: ""
     };
     
+    getGameState();
     return state;
 
 });

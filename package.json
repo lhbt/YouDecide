@@ -1,0 +1,16 @@
+{
+  "name": "you-decide",
+  "version": "1.0.0",
+  "description": "Client for You Decide",
+  "main": "index.js",
+  "dependencies": {
+    "bower": "^1.5.3",
+    "requirejs": "^2.1.20"
+  },
+  "scripts": {
+    "postinstall": "./node_modules/.bin/bower install"
+  },
+  "author": "Laurent Humbert",
+  "license": "LicenseRef-LICENSE",
+  "private": true
+}

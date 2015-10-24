@@ -1,18 +1,13 @@
 define('dataAccessor', ['jquery'], function($) {
     return {
-        getGameState: function(criteria, onSuccess, onFailure) {
-            var url = 'http://youdecideapi.apphb.com/gamestate';
-            sendAjaxRequest(url, 'get', onSuccess, onFailure);
+        getGameState: function(onSuccess, onFailure) {
+            $.ajax({
+                url: 'http://youdecideapi.apphb.com/gamestate',
+                type: 'get',
+                dataType: 'json',
+                success: onSuccess,
+                error: onFailure
+            });
         }
-    }
-
-    function sendAjaxRequest(url, requestType, onSuccess, onError) {
-        $.ajax({
-            url: url,
-            type: requestType,
-            dataType: 'json',
-            success: onSuccess,
-            error: onError
-        });
     }
 });
