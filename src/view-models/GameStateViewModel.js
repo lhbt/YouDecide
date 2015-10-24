@@ -4,6 +4,7 @@ define('gameStateViewModel', ['dataAccessor'], function (dataAccessor) {
         dataAccessor.getGameState(
             function(data) {
                 state.Options = data.gameOptions;
+                state.History = data.history;
                 state.HasOptions = true;
             }
         )
@@ -12,11 +13,11 @@ define('gameStateViewModel', ['dataAccessor'], function (dataAccessor) {
     var state = {
         Options: [],
         HasOptions: false,
-        GameState: ""
+        History: ""
     };
     
     getGameState();
-    
+
     return state;
 
 });

@@ -10,11 +10,12 @@
     <div class="container" id="leContainer">
 
         <div class="header clearfix">
-            <h3 class="text-muted">You Decide</h3>
+            <h1 class="text-muted">You Decide</h1>
         </div>
 
-        <h1 rv-text="viewModel.GameState"></h1>
-
+        <h3 rv-text="viewModel.History"></h3>
+        <br/>
+        <br/>
         <div>
             <p>Your options now are...</p>
             <ul class="list-group" rv-if="viewModel:HasOptions">
@@ -23,6 +24,10 @@
                 </li>
             </ul>
         </div>
+        <br/>
+        <br/>
+        <br/>
+        <h4>To play, text your choice to +44 7860 033 661</h4>
     </div>
 </body>
 </html>
