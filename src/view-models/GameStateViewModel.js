@@ -4,8 +4,9 @@ define('gameStateViewModel', ['dataAccessor'], function (dataAccessor) {
         dataAccessor.getGameState(
             function(data) {
                 state.Options = data.GameOptions;
-                state.History = data.History;
                 state.HasOptions = true;
+                state.History = data.History;
+                state.DeathlyDeathText = data.DeathlyDeathText;
             }
         )
     };
@@ -13,7 +14,8 @@ define('gameStateViewModel', ['dataAccessor'], function (dataAccessor) {
     var state = {
         Options: [],
         HasOptions: false,
-        History: ""
+        History: "",
+        DeathlyDeathText: ""
     };
     
     var timer = setInterval(getGameState, 1000);
