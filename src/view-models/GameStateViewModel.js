@@ -10,6 +10,8 @@ define('gameStateViewModel', ['dataAccessor'], function (dataAccessor) {
                 state.NextOptions = data.DeathlyDeathText.length > 0 ? ("But it's ok, you can have another go. " + options) : options;
                 state.HasDeathlyDeathText = data.DeathlyDeathText.length > 0 ? true : false;
                 state.HasHistory = data.History.length > 1 ? true : false;
+                state.HasSailorMoon = data.DeathlyDeathText.indexOf("Sailor Moon") > -1 ? true : false;
+                state.HasSkullAndCrossbones = state.HasDeathlyDeathText && !state.HasSailorMoon;
             }
         )
     };
@@ -24,6 +26,8 @@ define('gameStateViewModel', ['dataAccessor'], function (dataAccessor) {
         NextOptions: "",
         HasDeathlyDeathText: false,
         HasHistory: false,
+        HasSailorMoon: false,
+        HasSkullAndCrossbones: false,
     };
     
     var timer = setInterval(getGameState, 1000);

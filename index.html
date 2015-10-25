@@ -40,7 +40,8 @@
                             <h2 class="panel-title">Uh-oh...</h2>
                         </div>
                         <div class="panel-body">
-                            <img src="skull_and_crossbones.gif" alt="YOU DIE" style="width:120px;height:100px;">
+                            <div><img src="skull_and_crossbones.gif" alt="YOU DIE" style="width:120px;height:100px;" rv-if="viewModel:HasSkullAndCrossbones"></div>
+                            <div><img src="sailor_moon.gif" alt="Computer Man" style="width:240px;height:240px;" rv-if="viewModel:HasSailorMoon"></div>
                             <font color="red"><h3 rv-text="viewModel.DeathlyDeathText"><strong></strong></h3></font>
                         </div>
                     </div>
