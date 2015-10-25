@@ -11,30 +11,93 @@
 
         <img src="logo.png" width="717.5" height="250" />
 
-        <h3 rv-text="viewModel.History"></h3>
+        <div rv-if="viewModel:HasHistory">
+            <div class="panel panel-primary">
+              <div class="panel-heading">
+                <h3 class="panel-title">The story so far...</h3>
+              </div>
+                <div class="panel-body">
+                    <h4 rv-text="viewModel.History"></h4>
+                </div>
+            </div>
+        </div>
+
+        <!--<h3 rv-text="viewModel.History"></h3>
         <br/>
+        <br/>-->
+
+        <div rv-if="viewModel:HasDeathlyDeathText">
+            <br/>
+
+            <div class="panel panel-danger">
+              <div class="panel-heading">
+                <h3 class="panel-title" rv-text="viewModel.DeathlyDeathText"></h3>
+              </div>
+            </div>
+
+            <!--<font color="red"><h3 rv-text="viewModel.DeathlyDeathText"></h3></font>
+            <br/>
+            <br/>-->
+        </div>
         <br/>
-        <font color="red"><h3 rv-text="viewModel.DeathlyDeathText"></h3></font>
-        <br/>
-        <br/>
+
         <div>
-            <p>Your options now are...</p>
+            <!-- <p rv-text="viewModel.AllowGoBack">boo</p>-->
+
+            <div class="panel panel-success">
+              <div class="panel-heading">
+                <!--<h3 class="panel-title">Your options now are...</h3>-->
+                <h3 class="panel-title" rv-text="viewModel.NextOptions"></h3>
+              </div>
+                <ul class="list-group" rv-if="viewModel:HasOptions">
+                    <li class="list-group-item" rv-each-option="viewModel:Options">
+                        {option.OptionNumber}: {option.Option}
+                    </li>
+                </ul>
+            </div>
+
+            <!--<p>Your options now are...</p>
             <ul class="list-group" rv-if="viewModel:HasOptions">
                 <li class="list-group-item" rv-each-option="viewModel:Options">
                     {option.OptionNumber}: {option.Option}
                 </li>
-            </ul>
+            </ul>-->
         </div>
         <br/>
         <br/>
         <br/>
-        <h4>To play, you will need to send texts to +44 7860 033 661</h4>
+        <br/>
+
+        <div class="panel panel-info">
+          <div class="panel-heading">
+            <h3 class="panel-title">To play, you will need to send texts to +44 7860 033 661</h3>
+          </div>
+          <div class="panel-body">
+            <ul class="list-group" rv-if="viewModel:HasOptions">
+                <h4>To start a game, simply text "start".</h4>
+                <h4>To select an option, text the option number.</h4>
+                <h4>To go back, text "back".</h4>
+                <br/>
+
+                <div class="panel panel-warning">
+                  <div class="panel-heading">
+                    <h3 class="panel-title">NB: You may not be the only player. Multiplayer is not available _yet_, bear with us while we implement it!</h3>
+                  </div>
+                </div>
+
+                <!--<h1>NB: You may not be the only player. Multiplayer is not available _yet_, bear with us while we implement it!</h1>-->
+            </ul>
+          </div>
+        </div>
+
+        <!--<h4>To play, you will need to send texts to +44 7860 033 661</h4>
         <br/>
         <h4>To start a game, simply text "start".</h4>
         <h4>To select an option, text the option number.</h4>
         <h4>To go back, text "back".</h4>
         <br/>
-        <h1>NB: You may not be the only player. Multiplayer is not available _yet_, bear with us while we implement it!</h1>
+        <h1>NB: You may not be the only player. Multiplayer is not available _yet_, bear with us while we implement it!</h1>-->
+
     </div>
 </body> 
 </html>
