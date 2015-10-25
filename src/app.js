@@ -44,5 +44,9 @@ require([
         }
     };
 
+    rivets.binders.src = function(el, value) {
+        el.src = value;
+    };
+
     rivets.bind($("#leContainer"), { viewModel: gameStateViewModel });
 });

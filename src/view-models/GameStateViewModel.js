@@ -38,6 +38,7 @@ define('gameStateViewModel', ['dataAccessor'], function (dataAccessor) {
 
     console.log('has game Id: ' + state.HasGameId);
     console.log('window.location.hash: ' + window.location.hash);
+    console.log('HasSkullAndCrossbones: ' + state.HasSkullAndCrossbones);
 
     return state;
 
