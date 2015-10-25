@@ -13,11 +13,11 @@
 
         <div rv-if="viewModel:HasHistory">
             <div class="panel panel-primary">
-              <div class="panel-heading">
-                <h3 class="panel-title">The story so far...</h3>
-              </div>
+                <div class="panel-heading">
+                    <h3 class="panel-title">The story so far...</h3>
+                </div>
                 <div class="panel-body">
-                    <h4 rv-text="viewModel.History"></h4>
+                    <h5 rv-text="viewModel.History"></h5>
                 </div>
             </div>
         </div>
@@ -30,9 +30,13 @@
             <br/>
 
             <div class="panel panel-danger">
-              <div class="panel-heading">
-                <h3 class="panel-title" rv-text="viewModel.DeathlyDeathText"></h3>
-              </div>
+                <div class="panel-heading">                
+                    <h2 class="panel-title">Uh-oh...</h2>
+                </div>
+                <div class="panel-body">
+                    <img src="skull_and_crossbones.gif" alt="YOU DIE" style="width:120px;height:100px;">
+                    <font color="red"><h3 rv-text="viewModel.DeathlyDeathText"><strong></strong></h3></font>
+                </div>
             </div>
 
             <!--<font color="red"><h3 rv-text="viewModel.DeathlyDeathText"></h3></font>
@@ -50,9 +54,11 @@
                 <h3 class="panel-title" rv-text="viewModel.NextOptions"></h3>
               </div>
                 <ul class="list-group" rv-if="viewModel:HasOptions">
-                    <li class="list-group-item" rv-each-option="viewModel:Options">
-                        {option.OptionNumber}: {option.Option}
-                    </li>
+                    <strong>
+                        <li class="list-group-item" rv-each-option="viewModel:Options">
+                            {option.OptionNumber}: {option.Option}
+                        </li>
+                    </strong>
                 </ul>
             </div>
 
@@ -74,10 +80,11 @@
           </div>
           <div class="panel-body">
             <ul class="list-group" rv-if="viewModel:HasOptions">
-                <h4>To start a game, simply text "start".</h4>
-                <h4>To select an option, text the option number.</h4>
-                <h4>To go back, text "back".</h4>
-                <br/>
+                
+                <h5><strong>To start a game, simply text "start".</strong></h5>
+                <h5><strong>To select an option, text the option number.</strong></h5>
+                <h5><strong>To go back, text "back".</strong></h5>
+                <br/>                
 
                 <div class="panel panel-warning">
                   <div class="panel-heading">
