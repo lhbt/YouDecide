@@ -9,101 +9,109 @@
 <body>
     <div class="container" id="leContainer">
 
-        <img src="logo.png" width="717.5" height="250" />
+        <div class="panel panel-primary">
+          <div class="panel-heading">
+            <center><img src="logo.png" width="717.5" height="250" /></center>
+          </div>
+          <div class="panel-body" style="padding:60px;">            
 
-        <div rv-if="viewModel:HasHistory">
-            <div class="panel panel-primary">
-                <div class="panel-heading">
-                    <h3 class="panel-title">The story so far...</h3>
+                <!--<img src="logo.png" width="717.5" height="250" />-->
+
+                <div rv-if="viewModel:HasHistory">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">The story so far...</h3>
+                        </div>
+                        <div class="panel-body">
+                            <h5 rv-text="viewModel.History"></h5>
+                        </div>
+                    </div>
                 </div>
-                <div class="panel-body">
-                    <h5 rv-text="viewModel.History"></h5>
+
+                <!--<h3 rv-text="viewModel.History"></h3>
+                <br/>
+                <br/>-->
+
+                <div rv-if="viewModel:HasDeathlyDeathText">
+                    <br/>
+
+                    <div class="panel panel-danger">
+                        <div class="panel-heading">                
+                            <h2 class="panel-title">Uh-oh...</h2>
+                        </div>
+                        <div class="panel-body">
+                            <img src="skull_and_crossbones.gif" alt="YOU DIE" style="width:120px;height:100px;">
+                            <font color="red"><h3 rv-text="viewModel.DeathlyDeathText"><strong></strong></h3></font>
+                        </div>
+                    </div>
+
+                    <!--<font color="red"><h3 rv-text="viewModel.DeathlyDeathText"></h3></font>
+                    <br/>
+                    <br/>-->
                 </div>
-            </div>
-        </div>
+                <br/>
 
-        <!--<h3 rv-text="viewModel.History"></h3>
-        <br/>
-        <br/>-->
+                <div>
+                    <!-- <p rv-text="viewModel.AllowGoBack">boo</p>-->
 
-        <div rv-if="viewModel:HasDeathlyDeathText">
-            <br/>
+                    <div class="panel panel-success">
+                      <div class="panel-heading">
+                        <!--<h3 class="panel-title">Your options now are...</h3>-->
+                        <h3 class="panel-title" rv-text="viewModel.NextOptions"></h3>
+                      </div>
+                        <ul class="list-group" rv-if="viewModel:HasOptions">
+                            <strong>
+                                <li class="list-group-item" rv-each-option="viewModel:Options">
+                                    {option.OptionNumber}: {option.Option}
+                                </li>
+                            </strong>
+                        </ul>
+                    </div>
 
-            <div class="panel panel-danger">
-                <div class="panel-heading">                
-                    <h2 class="panel-title">Uh-oh...</h2>
-                </div>
-                <div class="panel-body">
-                    <img src="skull_and_crossbones.gif" alt="YOU DIE" style="width:120px;height:100px;">
-                    <font color="red"><h3 rv-text="viewModel.DeathlyDeathText"><strong></strong></h3></font>
-                </div>
-            </div>
-
-            <!--<font color="red"><h3 rv-text="viewModel.DeathlyDeathText"></h3></font>
-            <br/>
-            <br/>-->
-        </div>
-        <br/>
-
-        <div>
-            <!-- <p rv-text="viewModel.AllowGoBack">boo</p>-->
-
-            <div class="panel panel-success">
-              <div class="panel-heading">
-                <!--<h3 class="panel-title">Your options now are...</h3>-->
-                <h3 class="panel-title" rv-text="viewModel.NextOptions"></h3>
-              </div>
-                <ul class="list-group" rv-if="viewModel:HasOptions">
-                    <strong>
+                    <!--<p>Your options now are...</p>
+                    <ul class="list-group" rv-if="viewModel:HasOptions">
                         <li class="list-group-item" rv-each-option="viewModel:Options">
                             {option.OptionNumber}: {option.Option}
                         </li>
-                    </strong>
-                </ul>
-            </div>
+                    </ul>-->
+                </div>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
 
-            <!--<p>Your options now are...</p>
-            <ul class="list-group" rv-if="viewModel:HasOptions">
-                <li class="list-group-item" rv-each-option="viewModel:Options">
-                    {option.OptionNumber}: {option.Option}
-                </li>
-            </ul>-->
-        </div>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-
-        <div class="panel panel-info">
-          <div class="panel-heading">
-            <h3 class="panel-title">To play, you will need to send texts to +44 7860 033 661</h3>
-          </div>
-          <div class="panel-body">
-            <ul class="list-group" rv-if="viewModel:HasOptions">
-                
-                <h5><strong>To start a game, simply text "start".</strong></h5>
-                <h5><strong>To select an option, text the option number.</strong></h5>
-                <h5><strong>To go back, text "back".</strong></h5>
-                <br/>                
-
-                <div class="panel panel-warning">
+                <div class="panel panel-info">
                   <div class="panel-heading">
-                    <h3 class="panel-title">NB: You may not be the only player. Multiplayer is not available _yet_, bear with us while we implement it!</h3>
+                    <h3 class="panel-title">To play, you will need to send texts to +44 7860 033 661</h3>
+                  </div>
+                  <div class="panel-body">
+                    <ul class="list-group" rv-if="viewModel:HasOptions">
+                        
+                        <h5><strong>To start a game, simply text "start".</strong></h5>
+                        <h5><strong>To select an option, text the option number.</strong></h5>
+                        <h5><strong>To go back, text "back".</strong></h5>
+                        <br/>                
+
+                        <div class="panel panel-warning">
+                          <div class="panel-heading">
+                            <h3 class="panel-title">NB: You may not be the only player. Multiplayer is not available _yet_, bear with us while we implement it!</h3>
+                          </div>
+                        </div>
+
+                        <!--<h1>NB: You may not be the only player. Multiplayer is not available _yet_, bear with us while we implement it!</h1>-->
+                    </ul>
                   </div>
                 </div>
 
-                <!--<h1>NB: You may not be the only player. Multiplayer is not available _yet_, bear with us while we implement it!</h1>-->
-            </ul>
+                <!--<h4>To play, you will need to send texts to +44 7860 033 661</h4>
+                <br/>
+                <h4>To start a game, simply text "start".</h4>
+                <h4>To select an option, text the option number.</h4>
+                <h4>To go back, text "back".</h4>
+                <br/>
+                <h1>NB: You may not be the only player. Multiplayer is not available _yet_, bear with us while we implement it!</h1>-->
           </div>
         </div>
-
-        <!--<h4>To play, you will need to send texts to +44 7860 033 661</h4>
-        <br/>
-        <h4>To start a game, simply text "start".</h4>
-        <h4>To select an option, text the option number.</h4>
-        <h4>To go back, text "back".</h4>
-        <br/>
-        <h1>NB: You may not be the only player. Multiplayer is not available _yet_, bear with us while we implement it!</h1>-->
 
     </div>
 </body> 
