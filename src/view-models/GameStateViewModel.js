@@ -12,6 +12,7 @@ define('gameStateViewModel', ['dataAccessor'], function (dataAccessor) {
                 state.HasHistory = data.History.length > 1 ? true : false;
                 state.HasSailorMoon = data.DeathlyDeathText.indexOf("Sailor Moon") > -1 ? true : false;
                 state.HasSkullAndCrossbones = state.HasDeathlyDeathText && !state.HasSailorMoon;
+                state.HasGameId = true;
             }
         )
     };
@@ -28,9 +29,15 @@ define('gameStateViewModel', ['dataAccessor'], function (dataAccessor) {
         HasHistory: false,
         HasSailorMoon: false,
         HasSkullAndCrossbones: false,
+        HasGameId: false
     };
     
-    var timer = setInterval(getGameState, 1000);
+    if (window.location.hash != "") {
+        var timer = setInterval(getGameState, 1000);   
+    }
+
+    console.log('has game Id: ' + state.HasGameId);
+    console.log('window.location.hash: ' + window.location.hash);
 
     return state;
 

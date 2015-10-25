@@ -13,10 +13,34 @@
           <div class="panel-heading">
             <center><img src="logo.png" width="717.5" height="250" /></center>
           </div>
-          <div class="panel-body" style="padding:60px;">            
+          <div class="panel-body" style="padding:60px;">   
 
-                <!--<img src="logo.png" width="717.5" height="250" />-->
+            <div class="panel panel-info" rv-unless="viewModel:HasGameId">
+              <div class="panel-heading">
+                <h3 class="panel-title">To play, you will need to send texts to +44 7860 033 661</h3>
+              </div>
+              <div class="panel-body">
+                <ul class="list-group">
+                    
+                    <h5><strong>To start a game, simply text "start", and you will receive a text giving you your very own game url.</strong></h5>
+                    <br/>                
 
+                    <div class="panel panel-danger">
+                        <div class="panel-heading">
+                            <h3 class="panel-title"><center>!!! WOW !!!</center></h3>
+                        </div>
+                        <div class="panel-body">
+                            <center>
+                                <div><img src="gifs/wow.gif" alt="WOW"></div>
+                            </center>
+                            <center><font color="red"><h3><strong>!!! This means we can now cater for multiple players! We rock! !!!</strong></h3></font></center>
+                        </div>
+                    </div>
+                </ul>
+              </div> 
+            </div>        
+
+              <div rv-if="viewModel:HasGameId">
                 <div rv-if="viewModel:HasHistory">
                     <div class="panel panel-primary">
                         <div class="panel-heading">
@@ -28,10 +52,6 @@
                     </div>
                 </div>
 
-                <!--<h3 rv-text="viewModel.History"></h3>
-                <br/>
-                <br/>-->
-
                 <div rv-if="viewModel:HasDeathlyDeathText">
                     <br/>
 
@@ -40,24 +60,20 @@
                             <h2 class="panel-title">Uh-oh...</h2>
                         </div>
                         <div class="panel-body">
-                            <div><img src="skull_and_crossbones.gif" alt="YOU DIE" style="width:120px;height:100px;" rv-if="viewModel:HasSkullAndCrossbones"></div>
-                            <div><img src="sailor_moon.gif" alt="Computer Man" style="width:240px;height:240px;" rv-if="viewModel:HasSailorMoon"></div>
+                            <center>
+                                <div><img src="gifs/skull_and_crossbones.gif" alt="YOU DIE" style="width:120px;height:100px;" rv-if="viewModel:HasSkullAndCrossbones"></div>
+                                <div><img src="gifs/sailor_moon.gif" alt="Computer Man" style="width:240px;height:240px;" rv-if="viewModel:HasSailorMoon"></div>
+                            </center>
                             <font color="red"><h3 rv-text="viewModel.DeathlyDeathText"><strong></strong></h3></font>
                         </div>
                     </div>
-
-                    <!--<font color="red"><h3 rv-text="viewModel.DeathlyDeathText"></h3></font>
-                    <br/>
-                    <br/>-->
                 </div>
                 <br/>
 
                 <div>
-                    <!-- <p rv-text="viewModel.AllowGoBack">boo</p>-->
 
                     <div class="panel panel-success">
                       <div class="panel-heading">
-                        <!--<h3 class="panel-title">Your options now are...</h3>-->
                         <h3 class="panel-title" rv-text="viewModel.NextOptions"></h3>
                       </div>
                         <ul class="list-group" rv-if="viewModel:HasOptions">
@@ -68,13 +84,6 @@
                             </strong>
                         </ul>
                     </div>
-
-                    <!--<p>Your options now are...</p>
-                    <ul class="list-group" rv-if="viewModel:HasOptions">
-                        <li class="list-group-item" rv-each-option="viewModel:Options">
-                            {option.OptionNumber}: {option.Option}
-                        </li>
-                    </ul>-->
                 </div>
                 <br/>
                 <br/>
@@ -86,32 +95,14 @@
                     <h3 class="panel-title">To play, you will need to send texts to +44 7860 033 661</h3>
                   </div>
                   <div class="panel-body">
-                    <ul class="list-group" rv-if="viewModel:HasOptions">
-                        
+                    <ul class="list-group" rv-if="viewModel:HasOptions">                        
                         <h5><strong>To start a game, simply text "start".</strong></h5>
                         <h5><strong>To select an option, text the option number.</strong></h5>
                         <h5><strong>To go back, text "back".</strong></h5>
-                        <br/>                
-
-                        <div class="panel panel-warning">
-                          <div class="panel-heading">
-                            <h3 class="panel-title">NB: You may not be the only player. Multiplayer is not available _yet_, bear with us while we implement it!</h3>
-                          </div>
-                        </div>
-
-                        <!--<h1>NB: You may not be the only player. Multiplayer is not available _yet_, bear with us while we implement it!</h1>-->
                     </ul>
                   </div>
                 </div>
-
-                <!--<h4>To play, you will need to send texts to +44 7860 033 661</h4>
-                <br/>
-                <h4>To start a game, simply text "start".</h4>
-                <h4>To select an option, text the option number.</h4>
-                <h4>To go back, text "back".</h4>
-                <br/>
-                <h1>NB: You may not be the only player. Multiplayer is not available _yet_, bear with us while we implement it!</h1>-->
-          </div>
+            </div>
         </div>
 
     </div>
