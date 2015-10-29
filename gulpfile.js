@@ -6,7 +6,9 @@ gulp.task('default', ['deploy']);
 
 gulp.task('deploy', function() {
 
-  var pathToPrivateKey = path.join(process.env.HOME, '.ssh/awskey.pem');
+  var homePath = (process.env.HOME || process.env.USERPROFILE);
+  console.log("Your private ssh key needs to go here: " + homePath + "\.ssh");
+  var pathToPrivateKey = path.join(homePath, '.ssh/awskey.pem');
 
   return gulp.src(['src/**/*', 'index.html'], { "base" : "." })
     .pipe(scp({
